@@ -16,31 +16,37 @@ const messages = {
         panchos: [
             { 
                 img: "img/tio_pancho.png", 
-                name: "Pancho Clásico", 
-                price: "$1500", 
-                desc: "Salchicha de Viena, pan artesanal, aderezos tradicionales y lluvia de papas." 
+                name: "Tio Pancho", 
+                price: "$15.000", 
+                desc: "El mas grande de la ciudad! Pancho de 70 centimetros con aderezos y papas." 
             },
             { 
                 img: "img/tio_pancho.png", 
-                name: "Super Pancho", 
-                price: "$2200", 
-                desc: "Salchicha alemana, panceta crocante, queso cheddar fundido y verdeo." 
-            }
+                name: "Tio Pancho a la Pizza", 
+                price: "$17.000", 
+                desc: "Pancho de 70 centimetros con salsa de tomate, muzzarella y oregano." 
+            },
+            { 
+                img: "img/tio_pancho.png", 
+                name: "Tio Pancho a la Bondiola", 
+                price: "$17.000", 
+                desc: "Pancho de 70 centimetros con bondiola desmechada." 
+            },
         ],
         hamburguesas: [
             { 
                 img: "img/tio_hamburguesa.png", 
                 name: "Doble Cheddar", 
-                price: "$4500", 
-                desc: "Doble medallón de carne 120g, doble queso cheddar, cebolla caramelizada y salsa secreta." 
+                price: "$8.000", 
+                desc: "Medallón de carne, lechuga, tomate, huevo y aderezos a eleccion." 
             }
         ],
         pizzas: [
             { 
                 img: "img/tio_pizza.png", 
                 name: "Muzzarella", 
-                price: "$5000", 
-                desc: "Salsa de tomate casera, abundante queso muzzarella, orégano y aceitunas." 
+                price: "$10.000", 
+                desc: "Pizza a la piedra con salsa de tomate, queso muzzarella y orégano." 
             }
         ],
         bebidas: [
@@ -48,13 +54,12 @@ const messages = {
                 img: "img/tio_bebida.png", 
                 name: "Línea Coca-Cola 500ml", 
                 price: "$1200", 
-                desc: "Coca-Cola, Sprite, Fanta (Regular o Zero)." 
+                desc: "Consultar disponibilidad." 
             }
         ]
     },
     footer: {
         title: "Tío Pancho - Menú Digital",
-        address: "📍 Tu Dirección 123, Ciudad",
-        phone: "📱 Whatsapp: +54 9 11 1234-5678"
+        address: "📍 Alvarado 2045, Mar del Plata"
     }
 };
