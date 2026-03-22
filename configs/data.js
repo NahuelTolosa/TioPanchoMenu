@@ -83,7 +83,7 @@ const messages = {
             { 
                 img: "img/tio_bebida.png", 
                 name: "Línea Coca-Cola 500ml", 
-                price: "$1.200", 
+                price: "$3.000", 
                 desc: "Variedad de sabores. Consultar disponibilidad al momento del pedido." 
             }
         ]
