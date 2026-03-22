@@ -84,6 +84,12 @@ header p {
     display: none;
 }
 
+.nav-arrow {
+    align-content: center;
+    color: var(--text-light);
+    opacity: 0.2;
+}
+
 .category-btn {
     background-color: var(--white);
     color: var(--text-dark);
