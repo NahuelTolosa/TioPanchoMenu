@@ -180,6 +180,17 @@ header p {
     line-height: 1.4;
 }
 
+/* --- TEXTO DE "TOCA PARA VER" EN LA TARJETA --- */
+.tap-to-view {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: right;
+    opacity: 0.5;
+}
+
 /* --- FOOTER --- */
 footer {
     text-align: center;
