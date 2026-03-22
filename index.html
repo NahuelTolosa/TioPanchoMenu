@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tío Pancho - Menú Digital</title>
+        <link rel="icon" type="image/png" href="img/logo.png">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/styles.css">
     </head>
@@ -35,113 +36,13 @@
             </div>
         </div>
 
-        <script src="configs/data.js"></script>
-        
-        <script>
-            // ==========================================
-            // INTERRUPTOR DEL MODAL (ON/OFF)
-            // Cambia esto a false para apagar los modales
-            // ==========================================
-            const MODAL_ACTIVADO = true; 
+        <script src="configs/data.js"></script>     
+        <script src="js/header.js"></script>
+        <script src="js/footer.js"></script>
+        <script src="js/navegation.js"></script>
+        <script src="js/modal.js"></script>
+        <script src="js/productCards.js"></script>
+        <script src="js/map.js"></script>
 
-            // Elementos del DOM generales
-            document.getElementById('header-title').textContent = messages.header.title;
-            document.getElementById('header-subtitle').textContent = messages.header.subtitle;
-            document.getElementById('footer-title').textContent = messages.footer.title;
-            document.getElementById('footer-address').textContent = messages.footer.address;
-
-            // Elementos del Modal
-            const modal = document.getElementById('product-modal');
-            const modalImg = document.getElementById('modal-img');
-            const modalTitle = document.getElementById('modal-title');
-            const modalDesc = document.getElementById('modal-desc');
-            const closeModalIcon = document.getElementById('close-modal');
-            // const modalCloseBtn = document.getElementById('modal-close-btn');
-
-            // Función para abrir modal
-            function abrirModal(item) {
-                if (!MODAL_ACTIVADO) return;
-                modalImg.src = item.img;
-                modalImg.style.display = 'block'; // Por si se ocultó por error antes
-                modalTitle.textContent = item.name;
-                modalDesc.textContent = item.desc;
-                modal.classList.add('show');
-                document.body.style.overflow = 'hidden'; // Bloquea el scroll de fondo
-            }
-
-            // Función para cerrar modal
-            function cerrarModal() {
-                modal.classList.remove('show');
-                document.body.style.overflow = 'auto'; // Devuelve el scroll
-            }
-
-            // Eventos para cerrar el modal
-            closeModalIcon.addEventListener('click', cerrarModal);
-            // modalCloseBtn.addEventListener('click', cerrarModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) cerrarModal(); // Cierra si haces clic afuera de la caja blanca
-            });
-
-            // Armar navegación
-            const navContainer = document.getElementById('nav-container');
-            messages.categories.forEach((category, index) => {
-                const btn = document.createElement('a');
-                btn.href = `#${category.id}`;
-                btn.className = index === 0 ? 'category-btn active' : 'category-btn';
-                btn.textContent = category.name;
-                
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                });
-                navContainer.appendChild(btn);
-            });
-
-            // Armar las tarjetas del menú
-            const menuContainer = document.getElementById('menu-container');
-            messages.categories.forEach(category => {
-                const title = document.createElement('h2');
-                title.id = category.id;
-                title.className = 'category-title';
-                title.textContent = category.name;
-                menuContainer.appendChild(title);
-
-                const items = messages.menu[category.id];
-                if (items) {
-                    items.forEach(item => {
-                        const card = document.createElement('div');
-                        const isCategoryDrink = category.id == "bebidas"
-                        // Si el modal está activado, le ponemos la clase "clickable" para que salga la manito
-                        if(isCategoryDrink){
-                            card.className = 'menu-card';
-                        }else{
-                            card.className = MODAL_ACTIVADO ? 'menu-card clickable' : 'menu-card';
-                        }
-                        
-                        // Generar el HTML de la tarjeta
-                        card.innerHTML = `
-                            <img src="${item.img}" alt="${item.name}" class="card-img" onerror="this.style.display='none'">
-                            <div class="card-content">
-                                <div>
-                                    <div class="item-header">
-                                        <h3 class="item-name">${item.name}</h3>
-                                        <span class="item-price">${item.price}</span>
-                                    </div>
-                                    <p class="item-desc">${item.desc}</p>
-                                </div>
-                                ${ !isCategoryDrink ? ( MODAL_ACTIVADO ? '<span class="tap-to-view">👆 Tocar para ver</span>' : '' ) : ('') }
-                            </div>
-                        `;
-
-                        // Si el modal está activado, le agregamos el evento clic
-                        if (MODAL_ACTIVADO && !isCategoryDrink) {
-                            card.addEventListener('click', () => abrirModal(item));
-                        }
-
-                        menuContainer.appendChild(card);
-                    });
-                }
-            });
-        </script>
     </body>
 </html>
