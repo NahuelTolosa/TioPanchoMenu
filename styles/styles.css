@@ -157,6 +157,7 @@ header p {
 .item-name {
     font-size: 1.1rem;
     font-weight: 700;
+    margin-right: 5px;
     color: var(--text-dark);
 }
 
