@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tío Pancho - Menú Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIABLES DE COLOR --- */
+        :root {
+            --primary-color: #E63946; 
+            --secondary-color: #F4A261; 
+            --accent-color: #FFB703; 
+            --bg-color: #F8F9FA; 
+            --text-dark: #1D3557;
+            --text-light: #6C757D;
+            --white: #FFFFFF;
+        }
+
+        /* --- RESET Y ESTILOS BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+        }
+
+        /* --- CABECERA --- */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #c1121f);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background-color: var(--white);
+            border-radius: 50%;
+            padding: 5px;
+            object-fit: contain;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-top: -10px;
+            border: 4px solid var(--accent-color);
+            margin: auto;
+            /* Estilo si la imagen no carga */
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            margin-top: 15px;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* --- NAVEGACIÓN DE CATEGORÍAS --- */
+        .nav-categories {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            background-color: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .nav-categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-btn {
+            background-color: var(--white);
+            color: var(--text-dark);
+            border: 2px solid transparent;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            white-space: nowrap;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- CONTENEDOR DEL MENÚ --- */
+        .menu-container {
+            padding: 0 20px 40px;
+            max-width: 600px; 
+            margin: 0 auto;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            color: var(--primary-color);
+            border-bottom: 2px dashed var(--secondary-color);
+            padding-bottom: 5px;
+            scroll-margin-top: 90px; /* <--- ¡ESTA ES LA LÍNEA MÁGICA! */
+        }
+
+        /* --- TARJETAS DE PRODUCTO --- */
+        .menu-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            display: flex;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+
+        .menu-card:active {
+            transform: scale(0.98);
+        }
+
+        .card-img {
+            width: 120px;
+            min-height: 170px;
+            object-fit: cover;
+            background-color: #e9ecef; /* Gris clarito si no hay foto */
+            color: transparent; /* Oculta el texto roto de la imagen */
+        }
+
+        .card-content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .item-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .item-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            background-color: #ffe6e6;
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--text-dark);
+            color: var(--white);
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="img/logo.png" alt="Logo Tío Pancho" class="logo">
+        <h1>Tío Pancho</h1>
+        <p>¡El pancho mas grande de la ciudad!</p>
+    </header>
+
+    <nav class="nav-categories">
+        <a href="#panchos" class="category-btn active">🌭 Panchos</a>
+        <a href="#hamburguesas" class="category-btn">🍔 Hamburguesas</a>
+        <a href="#pizzas" class="category-btn">🍕 Pizzas</a>
+        <a href="#bebidas" class="category-btn">🥤 Bebidas</a>
+    </nav>
+
+    <main class="menu-container">
+        
+        <h2 id="panchos" class="category-title">🌭 Panchos</h2>
+        
+        <div class="menu-card">
+            <img src="img/tio_pancho.png" alt="Pancho Clásico" class="card-img">
+            <div class="card-content">
+                <div class="item-header">
+                    <h3 class="item-name">Pancho Clásico</h3>
+                    <span class="item-price">$1500</span>
+                </div>
+                <p class="item-desc">Salchicha de Viena, pan artesanal, aderezos tradicionales y lluvia de papas.</p>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <img src="img/tio_pancho.png" alt="Super Pancho" class="card-img">
+            <div class="card-content">
+                <div class="item-header">
+                    <h3 class="item-name">Super Pancho</h3>
+                    <span class="item-price">$2200</span>
+                </div>
+                <p class="item-desc">Salchicha alemana, panceta crocante, queso cheddar fundido y verdeo.</p>
+            </div>
+        </div>
+
+        <h2 id="hamburguesas" class="category-title">🍔 Hamburguesas</h2>
+
+        <div class="menu-card">
+            <img src="img/tio_hamburguesa.png" alt="Hamburguesa Completa" class="card-img">
+            <div class="card-content">
+                <div class="item-header">
+                    <h3 class="item-name">Doble Cheddar</h3>
+                    <span class="item-price">$4500</span>
+                </div>
+                <p class="item-desc">Doble medallón de carne 120g, doble queso cheddar, cebolla caramelizada y salsa secreta.</p>
+            </div>
+        </div>
+
+        <h2 id="pizzas" class="category-title">🍕 Pizzas</h2>
+
+        <div class="menu-card">
+            <img src="img/tio_pizza.png" alt="Pizza Muzzarella" class="card-img">
+            <div class="card-content">
+                <div class="item-header">
+                    <h3 class="item-name">Muzzarella</h3>
+                    <span class="item-price">$5000</span>
+                </div>
+                <p class="item-desc">Salsa de tomate casera, abundante queso muzzarella, orégano y aceitunas.</p>
+            </div>
+        </div>
+
+        <h2 id="bebidas" class="category-title">🥤 Bebidas</h2>
+
+        <div class="menu-card">
+            <img src="img/tio_bebida.png" alt="Gaseosa" class="card-img">
+            <div class="card-content">
+                <div class="item-header">
+                    <h3 class="item-name">Línea Coca-Cola 500ml</h3>
+                    <span class="item-price">$1200</span>
+                </div>
+                <p class="item-desc">Coca-Cola, Sprite, Fanta (Regular o Zero).</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><strong>Tío Pancho</strong> - Menú Digital</p>
+        <p>📍 Alvarado 2045, Mar del Plata</p>
+    </footer>
+
+    <script>
+        const navButtons = document.querySelectorAll('.category-btn');
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                navButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
