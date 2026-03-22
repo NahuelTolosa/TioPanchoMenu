@@ -132,10 +132,6 @@ header p {
     transition: transform 0.3s;
 }
 
-.menu-card:active {
-    transform: scale(0.98);
-}
-
 .card-img {
     width: 120px;
     min-height: 170px;

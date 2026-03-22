@@ -84,11 +84,11 @@
 
             // Armar navegación
             const navContainer = document.getElementById('nav-container');
-            messages.categories.forEach((cat, index) => {
+            messages.categories.forEach((category, index) => {
                 const btn = document.createElement('a');
-                btn.href = `#${cat.id}`;
+                btn.href = `#${category.id}`;
                 btn.className = index === 0 ? 'category-btn active' : 'category-btn';
-                btn.textContent = cat.name;
+                btn.textContent = category.name;
                 
                 btn.addEventListener('click', function() {
                     document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
@@ -99,19 +99,24 @@
 
             // Armar las tarjetas del menú
             const menuContainer = document.getElementById('menu-container');
-            messages.categories.forEach(cat => {
+            messages.categories.forEach(category => {
                 const title = document.createElement('h2');
-                title.id = cat.id;
+                title.id = category.id;
                 title.className = 'category-title';
-                title.textContent = cat.name;
+                title.textContent = category.name;
                 menuContainer.appendChild(title);
 
-                const items = messages.menu[cat.id];
+                const items = messages.menu[category.id];
                 if (items) {
                     items.forEach(item => {
                         const card = document.createElement('div');
+                        const isCategoryDrink = category.id == "bebidas"
                         // Si el modal está activado, le ponemos la clase "clickable" para que salga la manito
-                        card.className = MODAL_ACTIVADO ? 'menu-card clickable' : 'menu-card';
+                        if(isCategoryDrink){
+                            card.className = 'menu-card';
+                        }else{
+                            card.className = MODAL_ACTIVADO ? 'menu-card clickable' : 'menu-card';
+                        }
                         
                         // Generar el HTML de la tarjeta
                         card.innerHTML = `
@@ -124,12 +129,12 @@
                                     </div>
                                     <p class="item-desc">${item.desc}</p>
                                 </div>
-                                ${MODAL_ACTIVADO ? '<span class="tap-to-view">👆 Tocar para ver</span>' : ''}
+                                ${ !isCategoryDrink ? ( MODAL_ACTIVADO ? '<span class="tap-to-view">👆 Tocar para ver</span>' : '' ) : ('') }
                             </div>
                         `;
 
                         // Si el modal está activado, le agregamos el evento clic
-                        if (MODAL_ACTIVADO) {
+                        if (MODAL_ACTIVADO && !isCategoryDrink) {
                             card.addEventListener('click', () => abrirModal(item));
                         }
 
