@@ -5,6 +5,7 @@ const messages = {
     },
     // Categorías que aparecerán en el menú superior
     categories: [
+        { id: "combos", name: "🍽️ Combos" },
         { id: "tioPancho", name: "🌭 Tío Pancho" },
         { id: "superPancho", name: "🌭 Súper Pancho" },
         { id: "panchito", name: "🌭 Panchito" },
@@ -15,6 +16,50 @@ const messages = {
 
     // Productos separados por categoría
     menu: {
+        combos: [
+            { 
+                img: "img/combo1.png", 
+                realImg: "img/combo1_real.jpg",
+                name: "Combo 1: Tío Pancho para compartir", 
+                price: "$20.000", 
+                desc: "El gigante de la casa (70 cm) ideal para disfrutar entre varios. Incluye bebida grande a elección: Coca-Cola (2 Lts) o Cerveza (1 Lt). (Hacelo a la pizza o a la bondiola por $2.000 más c/u)" 
+            },
+            { 
+                img: "img/combo2.png", 
+                realImg: "img/combo2_real.jpg",
+                name: "Combo 2: Súper Sánguche de Bondiola para dos", 
+                price: "$15.000", 
+                desc: "Una locura para compartir: 1 espectacular sánguche de bondiola desmechada (40 cm) con muzzarella y una Coca-Cola (1 Lt)." 
+            },
+            { 
+                img: "img/combo3.png", 
+                realImg: "img/combo3_real.jpg",
+                name: "Combo 3: Súper Panchos para dos", 
+                price: "$19.000", 
+                desc: "La dupla perfecta: 2 súper panchos acompañados de 2 porciones de papas fritas crujientes y una Coca-Cola (1 Lt). (Hacelos a la pizza o a la bondiola por $2.000 más c/u)"
+            },
+            { 
+                img: "img/combo4.png", 
+                realImg: "img/combo4_real.jpg",
+                name: "Combo 4: Súper Pancho Individual", 
+                price: "$10.000", 
+                desc: "Para darte un gusto: 1 súper pancho clásico con nuestra porción de papas fritas y una Coca-Cola (500 ml). (Hacelo a la pizza o a la bondiola por $2.000 más)" 
+            },
+            { 
+                img: "img/combo5.png", 
+                realImg: "img/combo5_real.jpg",
+                name: "Combo 5: Hamburguesa Individual", 
+                price: "$12.000", 
+                desc: "Un clásico que no falla: 1 hamburguesa con su porción de papas fritas y una Coca-Cola (500 ml)." 
+            },
+            { 
+                img: "img/combo6.png", 
+                realImg: "img/combo6_real.jpg",
+                name: "Combo 6: Bondiola Individual", 
+                price: "$12.000", 
+                desc: "El favorito: 1 espectacular sánguche de bondiola desmechada y muzzarella, acompañado de papas fritas y una Coca-Cola (500 ml)." 
+            }
+        ],
         tioPancho: [
             { 
                 img: "img/tio_pancho.png", 
