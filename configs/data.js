@@ -9,7 +9,7 @@ const messages = {
         { id: "tioPancho", name: "🌭 Tío Pancho" },
         { id: "superPancho", name: "🌭 Súper Pancho" },
         { id: "panchito", name: "🌭 Panchito" },
-        { id: "hamburguesas", name: "🍔 Hamburguesas" },
+        { id: "sandwitch", name: "🍔 Sánguches" },
         { id: "pizzas", name: "🍕 Pizzas" },
         { id: "bebidas", name: "🥤 Bebidas" }
     ],
@@ -108,12 +108,26 @@ const messages = {
                 desc: "El tamaño ideal para los más chicos o para darte ese último gusto. Tierno, clásico y con papas." 
             }
         ],
-        hamburguesas: [
+        sandwitch: [
             { 
                 img: "img/tio_hamburguesa.png", 
                 name: "Burger", 
                 price: "$8.000", 
                 desc: "Medallón de carne vacuna, una montaña de queso cheddar fundido, vegetales y aderezos." 
+            },
+            { 
+                img: "img/tio_sacramento.png", 
+                realImg: "img/tio_sacramento_real.jpg",
+                name: "Sacramento Primavera", 
+                price: "$8.000", 
+                desc: "Un sandwich 'Primavera' en nuestro pan Sacramento especial. Relleno con jamón cocido, lechuga, rodajas de tomate fresco."// y huevo duro en rodajas."
+            },
+            { 
+                img: "img/tio_pebeton.png", 
+                realImg: "img/tio_pebeton_real.jpg",
+                name: "Pebetón Primavera", 
+                price: "$8.000", 
+                desc: "Un sandwich 'Primavera' en nuestro pan Pebete de 35 cm. Relleno con jamón cocido, lechuga, rodajas de tomate fresco."// y huevo duro en rodajas."
             }
         ],
         pizzas: [
@@ -121,7 +135,7 @@ const messages = {
                 img: "img/tio_pizza.png", 
                 name: "Muzzarella", 
                 price: "$10.000", 
-                desc: "Clásica pizza a la piedra, con muzzarella y orégano." 
+                desc: "Clásica pizza a la piedra o al molde, con muzzarella y orégano." 
             }
         ],
         bebidas: [
