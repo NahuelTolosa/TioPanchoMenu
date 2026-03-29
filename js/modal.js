@@ -15,8 +15,9 @@ const closeModalIcon = document.getElementById('close-modal');
 // Función para abrir modal
 const abrirModal = (item) => {
     if (!MODAL_ACTIVADO) return;
-    modalImg.src = item.img;
+    modalImg.src = item.realImg;
     modalImg.style.display = 'block'; // Por si se ocultó por error antes
+    modalImg.style.height = 'auto';
     modalTitle.textContent = item.name;
     modalDesc.textContent = item.desc;
     modal.classList.add('show');
