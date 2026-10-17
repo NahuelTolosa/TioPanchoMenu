@@ -15,6 +15,7 @@ mapContainer.innerHTML = `
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
+        <p class="location-tagline">${messages.footer.tagline}</p>
     </section>
 `
 

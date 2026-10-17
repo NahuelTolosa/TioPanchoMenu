@@ -12,7 +12,7 @@ messages.categories.forEach(category => {
     if (items) {
         items.forEach(item => {
             const card = document.createElement('div');
-            const isCategoryDrink = category.id == "bebidas"
+            const isCategoryDrink = category.id === "bebidas" || category.id === "otros"
             // Si el modal está activado, le ponemos la clase "clickable" para que salga la manito
             if(isCategoryDrink){
                 card.className = 'menu-card';
