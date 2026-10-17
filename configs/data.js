@@ -66,7 +66,7 @@ const messages = {
                 img: "img/tio_pancho.png", 
                 name: "Tío Pancho Clásico", 
                 price: "$18.000", 
-                desc: "¡Nuestra leyenda de 70 cm! Una experiencia gigante para compartir, con papas fritas, aderezo y queso, y tus aderezos favoritos." 
+                desc: "¡Nuestra leyenda de 70 cm! Una experiencia gigante para compartir, con papas fritas, jamón y queso, y tus aderezos favoritos." 
             },
             { 
                 img: "img/tio_pancho_pizza.png", 
