@@ -121,14 +121,14 @@ const messages = {
                 realImg: "img/tio_sacramento_real.jpg",
                 name: "Sacramento Primavera", 
                 price: "$5.000", 
-                desc: "Un sandwich 'Primavera' en nuestro pan Sacramento especial. Relleno con jamón cocido, lechuga, rodajas de tomate fresco."// y huevo duro en rodajas."
+                desc: "Un sandwich 'Primavera' en nuestro pan Sacramento especial. Relleno con jamón, queso, lechuga, rodajas de tomate."
             },
             { 
                 img: "img/tio_pebeton.png", 
                 realImg: "img/tio_pebeton_real.jpg",
-                name: "Pebetón Primavera", 
+                name: "Pebetón ", 
                 price: "$4.000", 
-                desc: "Un sandwich 'Primavera' en nuestro pan Pebete de 35 cm. Relleno con jamón cocido, lechuga, rodajas de tomate fresco."// y huevo duro en rodajas."
+                desc: "Un sandwich en nuestro pan 'Pebete'. Relleno con jamón, queso, lechuga, rodajas de tomate."
             }
         ],
         pizzas: [
