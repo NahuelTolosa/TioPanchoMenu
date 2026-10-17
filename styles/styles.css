@@ -29,12 +29,13 @@ body {
 
 /* --- CABECERA --- */
 header {
-    background: linear-gradient(135deg, var(--primary-color), #c1121f);
+    background: #c1121f;
+    /* linear-gradient(135deg, var(--primary-color), #c1121f); */
     color: var(--white);
     text-align: center;
     padding: 2.5rem 1.25rem 1.25rem;
-    border-bottom-left-radius: 1.875rem;
-    border-bottom-right-radius: 1.875rem;
+    /* border-bottom-left-radius: 1.875rem; */
+    /* border-bottom-right-radius: 1.875rem; */
     box-shadow: 0 0.25rem 0.9375rem rgba(0,0,0,0.1);
     position: relative;
 }
@@ -67,6 +68,100 @@ header p {
     font-size: 0.9rem;
     opacity: 0.9;
     margin-top: 0.3125rem;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--text-dark);
+}
+
+.wave1{
+    position: relative;
+    bottom: 0.04rem;
+    z-index: 2;
+}
+
+.main-img-container {
+    width: 100%;
+    /* flex-shrink: 0;
+    object-fit: cover;
+    background-color: #e9ecef;
+    color: transparent;
+    position: relative;
+    bottom: 6rem;
+    z-index: 1; */
+}
+
+.main-img-container {
+    background-image: url('../img/foto-ppal.jpeg'); /* O la carpeta img/tu-foto.png */
+    background-size: cover;       /* Ajusta la foto para que cubra todo el div sin deformarse */
+    background-position: center;  /* Centra la imagen en el div */
+    background-repeat: no-repeat; /* Evita que la foto se repita en mosaico */
+    
+    /* Opcional: Define un tamaño para que el div tenga espacio */
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+    bottom: 5rem;
+    margin-bottom: -5rem;
+}
+
+.main-img {
+    width: 100%;
+    min-height: 10.625rem;
+    flex-shrink: 0;
+    object-fit: cover;
+    background-color: #e9ecef;
+    color: transparent;
+    position: relative;
+    bottom: 6rem;
+    z-index: 1;
+}
+
+.wave-bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.wave2{
+    position: relative;
+    bottom: 6rem;
+    margin-bottom: -6rem;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.wave2-fill{
+    position: relative;
+    bottom: 0.1rem;
+    width: 100%;
+    height: 3rem;
+    background-color: var(--accent-color);
+}
+
+
+.wave3{
+    
+    position: relative;
+    bottom: 7rem;
+    margin-bottom: -7rem;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.wave3-fill{
+    position: relative;
+    bottom: 0.1rem;
+    width: 100%;
+    height: 3rem;
+    background-color: var(--text-dark);
+
 }
 
 /* --- NAVEGACIÓN DE CATEGORÍAS --- */
