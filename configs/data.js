@@ -144,7 +144,7 @@ const messages = {
                 img: "img/tio_bebida.png", 
                 name: "Bebidas", 
                 price: "$3.000", 
-                desc: "Coca-Cola, Sprite o agua saborizada. Consultar disponibilidad al momento del pedido." 
+                desc: "Coca-Cola, Sprite o agua saborizada de 500cc. Consultar disponibilidad al momento del pedido." 
             }
         ],  
         otros: [
