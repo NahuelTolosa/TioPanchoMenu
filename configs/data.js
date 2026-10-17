@@ -146,7 +146,7 @@ const messages = {
                 price: "$3.000", 
                 desc: "Coca-Cola, Sprite o agua saborizada. Consultar disponibilidad al momento del pedido." 
             }
-        ],
+        ],  
         otros: [
             { 
                 img: "img/tequenos.png", 
@@ -165,6 +165,9 @@ const messages = {
     footer: {
         title: "Tío Pancho - Menú Digital",
         address: "📍 Alvarado 2045, Mar del Plata",
-        tagline: "Comida · Música · Karaoke"
+        tagline: "Comida · Música · Karaoke",
+        instagram: "Seguinos en Instagram",
+        instagramUsername: "@tiopanchomdp",
+        instagramLink: "https://www.instagram.com/tiopanchomdp/"
     }
 };
