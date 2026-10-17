@@ -2,7 +2,7 @@
 // INTERRUPTOR DEL MODAL (ON/OFF)
 // Cambia esto a false para apagar los modales
 // ==========================================
-const MODAL_ACTIVADO = false; 
+const MODAL_ACTIVADO = true; 
 
 // Elementos del Modal
 const modal = document.getElementById('product-modal');
