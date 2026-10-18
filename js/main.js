@@ -24,8 +24,9 @@ document.getElementById('main').innerHTML = `
                 </div>
             </div>
         </div>
-        <div id="blue-gap" class="blue-wave-gap">
-
+        <div id="blue-wave-gap" class="blue-wave-gap">
+            <span id="main-menu" class="main-menu">Menu</span>
+            <span id="main-menu-arrow" class="main-menu-arrow">>></span>
         </div>
     </div>
 `
