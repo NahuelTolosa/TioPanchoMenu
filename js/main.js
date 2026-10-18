@@ -34,50 +34,50 @@ let estadoPortada = 'INICIO';
 let isAnimating = false;
 let ultimoScrollY = window.scrollY;
 
-function manejarScrollPortada() {
-    // Si la animación ya está en curso, ignoramos los eventos
-    if (isAnimating) return;
+// function manejarScrollPortada() {
+//     // Si la animación ya está en curso, ignoramos los eventos
+//     if (isAnimating) return;
 
-    const scrollActual = window.scrollY;
-    const altoPortada = window.innerHeight;
+//     const scrollActual = window.scrollY;
+//     const altoPortada = window.innerHeight;
 
-    // 1. BAJAR DE LA PORTADA AL MENÚ
-    if (estadoPortada === 'INICIO' && scrollActual > 15) {
-        isAnimating = true;
-        estadoPortada = 'MENU';
+//     // 1. BAJAR DE LA PORTADA AL MENÚ
+//     if (estadoPortada === 'INICIO' && scrollActual > 15) {
+//         isAnimating = true;
+//         estadoPortada = 'MENU';
 
-        window.scrollTo({
-            top: altoPortada,
-            behavior: 'smooth'
-        });
+//         window.scrollTo({
+//             top: altoPortada,
+//             behavior: 'smooth'
+//         });
 
-        // Liberamos el bloqueo después de 600ms (duración aproximada del scroll)
-        setTimeout(() => {
-            isAnimating = false;
-            ultimoScrollY = window.scrollY;
-        }, 600);
-        return;
-    }
+//         // Liberamos el bloqueo después de 600ms (duración aproximada del scroll)
+//         setTimeout(() => {
+//             isAnimating = false;
+//             ultimoScrollY = window.scrollY;
+//         }, 600);
+//         return;
+//     }
 
-    // 2. SUBIR DEL MENÚ A LA PORTADA
-    if (estadoPortada === 'MENU' && scrollActual < altoPortada && scrollActual < ultimoScrollY) {
-        isAnimating = true;
-        estadoPortada = 'INICIO';
+//     // 2. SUBIR DEL MENÚ A LA PORTADA
+//     if (estadoPortada === 'MENU' && scrollActual < altoPortada && scrollActual < ultimoScrollY) {
+//         isAnimating = true;
+//         estadoPortada = 'INICIO';
 
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+//         window.scrollTo({
+//             top: 0,
+//             behavior: 'smooth'
+//         });
 
-        setTimeout(() => {
-            isAnimating = false;
-            ultimoScrollY = 0;
-        }, 600);
-        return;
-    }
+//         setTimeout(() => {
+//             isAnimating = false;
+//             ultimoScrollY = 0;
+//         }, 600);
+//         return;
+//     }
 
-    ultimoScrollY = scrollActual;
-}
+//     ultimoScrollY = scrollActual;
+// }
 
-// Usamos passive: true para no ralentizar el rendimiento del celular
-window.addEventListener('scroll', manejarScrollPortada, { passive: true });
+// // Usamos passive: true para no ralentizar el rendimiento del celular
+// window.addEventListener('scroll', manejarScrollPortada, { passive: true });
