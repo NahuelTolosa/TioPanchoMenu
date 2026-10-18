@@ -32,7 +32,7 @@ document.getElementById('main').innerHTML = `
 `
 
 // Seleccionás el botón, la flecha o el contenedor que el usuario va a cliquear
-const menuTrigger = document.querySelector('.main-menu-arrow'); // O 'btn-ver-menu' / 'main-header'
+const menuTrigger = document.querySelector('.blue-wave-gap'); // O 'btn-ver-menu' / 'main-header'
 
 if (menuTrigger) {
     menuTrigger.addEventListener('click', () => {
