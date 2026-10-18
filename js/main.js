@@ -31,9 +31,21 @@ document.getElementById('main').innerHTML = `
     </div>
 `
 
-let estadoPortada = 'INICIO';
-let isAnimating = false;
-let ultimoScrollY = window.scrollY;
+// Seleccionás el botón, la flecha o el contenedor que el usuario va a cliquear
+const menuTrigger = document.querySelector('.main-menu-arrow'); // O 'btn-ver-menu' / 'main-header'
+
+if (menuTrigger) {
+    menuTrigger.addEventListener('click', () => {
+        window.scrollTo({
+            top: window.innerHeight, // Desplaza exactamente 100vh (el alto de la pantalla)
+            behavior: 'smooth'       // Desplazamiento suave y animado
+        });
+    });
+}
+
+// let estadoPortada = 'INICIO';
+// let isAnimating = false;
+// let ultimoScrollY = window.scrollY;
 
 // function manejarScrollPortada() {
 //     // Si la animación ya está en curso, ignoramos los eventos
